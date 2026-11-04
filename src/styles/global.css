@@ -11,7 +11,7 @@
   --baldosa: #e4e1da;
   --error: #b3261e;
 
-  --fuente: 'Archivo', system-ui, sans-serif;
+  --fuente: 'Archivo Variable', system-ui, sans-serif;
   --ancho-expandido: 125%;
   --ancho-normal: 100%;
 
@@ -212,8 +212,16 @@ a {
   padding-block: clamp(3rem, 8vw, 6.5rem);
 }
 
+.hero__texto {
+  /* La columna de texto es un contenedor: el título se mide contra ella */
+  container-type: inline-size;
+  min-width: 0;
+}
+
 .hero__titulo {
-  font-size: var(--paso-hero);
+  /* "Cuadrado" mide 6 veces su tamaño de letra: con 15.5cqi la palabra ocupa
+     como mucho el 93% de su columna y nunca se mete bajo las baldosas */
+  font-size: min(var(--paso-hero), 15.5cqi);
   font-stretch: var(--ancho-expandido);
   font-weight: 900;
   line-height: 0.88;

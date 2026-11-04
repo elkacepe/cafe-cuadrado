@@ -31,11 +31,11 @@ Si usas `nvm`, basta con `nvm use` dentro de la carpeta para activar la versión
 
 ```
 cafe-cuadrado/
-├── index.html              Página base: título, descripción, fuente Archivo (Google Fonts)
+├── index.html              Página base: título y descripción para buscadores
 ├── public/
 │   └── favicon.svg         Icono de la pestaña
 └── src/
-    ├── main.jsx            Punto de entrada: monta la app y carga los estilos
+    ├── main.jsx            Punto de entrada: monta la app, carga la fuente Archivo y los estilos
     ├── App.jsx             Orden de las secciones de la página
     ├── components/         Las pantallas/bloques visibles
     │   ├── Header.jsx      Cabecera fija y menú (en móvil se abre con el botón "Menú")
@@ -115,6 +115,8 @@ Los datos de la carta no se pueden modificar desde la web, así que no necesitan
 - **Correo `error@...` para probar el fallo.** Se añadió para poder revisar el estado de error sin desconectar internet.
 - **Campo "¿Sobre qué nos escribes?".** No se pidió; se añadió para que la cafetería sepa de un vistazo si es reserva, encargo u otra cosa.
 - **Horario dentro de la sección de carta.** No había un bloque de horario en el encargo; se colocó junto a la carta para no añadir una sección más.
-- **Sin librerías extra.** Solo React y Vite; estilos en CSS plano con variables, para que sea fácil de leer y modificar sin saber programación avanzada.
+- **Fuente incluida en el proyecto.** Archivo se instala con `@fontsource-variable/archivo` en vez de cargarse desde Google Fonts: se ve igual en cualquier entorno y no depende de un servicio externo.
+- **Título del hero ajustado a su columna.** Su tamaño se calcula sobre el ancho de su columna (`15.5cqi`), no de la ventana, para que "Cuadrado" nunca quede bajo las baldosas.
+- **Sin librerías extra.** Solo React, Vite y la fuente; estilos en CSS plano con variables, para que sea fácil de leer y modificar sin saber programación avanzada.
 - **Una única animación.** Las baldosas del hero se colocan al cargar; se desactiva si el sistema tiene activado "reducir movimiento".
 - **Publicación en Vercel.** El encargo pedía una URL pública sin especificar dónde; Vercel publica cada cambio del repositorio de forma automática.
